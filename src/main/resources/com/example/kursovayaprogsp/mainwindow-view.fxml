@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.Font?>
+
+<TabPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovayaprogsp.MainwindowController">
+
+    <!-- Профиль пользователя -->
+    <tabs>
+        <Tab text="Профиль пользователя">
+            <AnchorPane>
+                <children>
+                    <ImageView fx:id="profileImage" layoutX="30.0" layoutY="30.0" fitWidth="150.0" fitHeight="150.0">
+                        <image>
+                            <Image url="@default-profile.png" />
+                        </image>
+                    </ImageView>
+                    <Label layoutX="200.0" layoutY="30.0" text="ФИО: Иванов Иван Иванович" textFill="black">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="200.0" layoutY="70.0" text="Группа: 123456" textFill="black">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="200.0" layoutY="110.0" text="Факультет: ФИТ" textFill="black">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                    </Label>
+                </children>
+            </AnchorPane>
+        </Tab>
+
+        <!-- Личный рейтинг -->
+        <Tab text="Личный рейтинг">
+            <AnchorPane>
+                <children>
+                    <!-- Переключатели семестров -->
+                    <VBox layoutX="30.0" layoutY="30.0" spacing="10">
+                        <children>
+                            <RadioButton fx:id="semester1RadioButton" text="1 семестр" selected="true" />
+                            <RadioButton fx:id="semester2RadioButton" text="2 семестр" />
+                            <RadioButton fx:id="semester3RadioButton" text="3 семестр" />
+                            <ToggleGroup fx:id="semesterToggleGroup" />
+                        </children>
+                    </VBox>
+
+                    <!-- Таблица с дисциплинами и оценками -->
+                    <TableView fx:id="ratingTable" layoutX="150.0" layoutY="30.0" prefWidth="600.0" prefHeight="300.0">
+                        <columns>
+                            <TableColumn fx:id="subjectColumn" text="Дисциплина" prefWidth="300.0" />
+                            <TableColumn fx:id="gradeColumn" text="Оценка" prefWidth="150.0" />
+                        </columns>
+                    </TableView>
+
+                    <!-- Средний балл -->
+                    <Label fx:id="averageLabel" layoutX="30.0" layoutY="350.0" text="Средний балл: 0.0" textFill="black">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                    </Label>
+                </children>
+            </AnchorPane>
+        </Tab>
+
+        <!-- Список одногруппников -->
+        <Tab text="Список одногруппников">
+            <AnchorPane>
+                <children>
+                    <TableView fx:id="studentsTable" layoutX="30.0" layoutY="30.0" prefWidth="740.0" prefHeight="500.0">
+                        <columns>
+                            <TableColumn fx:id="indexColumn" text="№" prefWidth="50.0" />
+                            <TableColumn fx:id="nameColumn" text="ФИО" prefWidth="690.0" />
+                        </columns>
+                    </TableView>
+                </children>
+            </AnchorPane>
+        </Tab>
+    </tabs>
+</TabPane>
