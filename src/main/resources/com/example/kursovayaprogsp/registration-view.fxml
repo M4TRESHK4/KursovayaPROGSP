@@ -21,7 +21,7 @@
                         <Font name="Moderustic ExtraBold" size="32.0" />
                     </font>
                 </Label>
-            <Button fx:id="backToAuthorizationButton" layoutX="488.0" layoutY="30.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="218.0" style="-fx-background-color: D8A25E;" text="Назад к авторизации">
+            <Button fx:id="backToAuthorizationButton" layoutX="488.0" layoutY="30.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="218.0" style="-fx-background-color: D8A25E;" text="Назад к авторизации" onAction="#switchToAuth">
                <font>
                   <Font name="Moderustic ExtraBold" size="18.0" />
                </font>

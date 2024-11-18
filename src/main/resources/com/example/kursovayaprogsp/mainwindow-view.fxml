@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<TabPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovayaprogsp.MainwindowController">
+<TabPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovayaprogsp.MainwindowController">
 
     <!-- Профиль пользователя -->
     <tabs>
         <Tab text="Профиль пользователя">
             <AnchorPane>
                 <children>
-                    <ImageView fx:id="profileImage" layoutX="30.0" layoutY="30.0" fitWidth="150.0" fitHeight="150.0">
+                    <ImageView fx:id="profileImage" fitHeight="150.0" fitWidth="150.0" layoutX="30.0" layoutY="30.0">
                         <image>
                             <Image url="@default-profile.png" />
                         </image>
@@ -43,18 +51,17 @@
                     <!-- Переключатели семестров -->
                     <VBox layoutX="30.0" layoutY="30.0" spacing="10">
                         <children>
-                            <RadioButton fx:id="semester1RadioButton" text="1 семестр" selected="true" />
+                            <RadioButton fx:id="semester1RadioButton" selected="true" text="1 семестр" />
                             <RadioButton fx:id="semester2RadioButton" text="2 семестр" />
                             <RadioButton fx:id="semester3RadioButton" text="3 семестр" />
-                            <ToggleGroup fx:id="semesterToggleGroup" />
                         </children>
                     </VBox>
 
                     <!-- Таблица с дисциплинами и оценками -->
-                    <TableView fx:id="ratingTable" layoutX="150.0" layoutY="30.0" prefWidth="600.0" prefHeight="300.0">
+                    <TableView fx:id="ratingTable" layoutX="150.0" layoutY="30.0" prefHeight="300.0" prefWidth="600.0">
                         <columns>
-                            <TableColumn fx:id="subjectColumn" text="Дисциплина" prefWidth="300.0" />
-                            <TableColumn fx:id="gradeColumn" text="Оценка" prefWidth="150.0" />
+                            <TableColumn fx:id="subjectColumn" prefWidth="300.0" text="Дисциплина" />
+                            <TableColumn fx:id="gradeColumn" prefWidth="150.0" text="Оценка" />
                         </columns>
                     </TableView>
 
@@ -72,14 +79,24 @@
         <Tab text="Список одногруппников">
             <AnchorPane>
                 <children>
-                    <TableView fx:id="studentsTable" layoutX="30.0" layoutY="30.0" prefWidth="740.0" prefHeight="500.0">
+                    <TableView fx:id="studentsTable" layoutX="30.0" layoutY="30.0" prefHeight="500.0" prefWidth="740.0">
                         <columns>
-                            <TableColumn fx:id="indexColumn" text="№" prefWidth="50.0" />
-                            <TableColumn fx:id="nameColumn" text="ФИО" prefWidth="690.0" />
+                            <TableColumn fx:id="indexColumn" prefWidth="50.0" text="№" />
+                            <TableColumn fx:id="nameColumn" prefWidth="690.0" text="ФИО" />
                         </columns>
                     </TableView>
                 </children>
             </AnchorPane>
         </Tab>
+      <Tab text="Техническая поддержка">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField layoutX="284.0" layoutY="159.0" prefHeight="25.0" prefWidth="233.0" />
+                  <TextField layoutX="284.0" layoutY="233.0" prefHeight="150.0" prefWidth="232.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
     </tabs>
 </TabPane>

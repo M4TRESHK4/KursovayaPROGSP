@@ -23,7 +23,7 @@ public class AuthorizationController {
     private void switchToReg() {
         try {
             // Загружаем новое окно
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/com/example/kursovayaprogsp/registration-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("registration-view.fxml"));
             Parent root = loader.load();
 
             // Создаем новое окно
