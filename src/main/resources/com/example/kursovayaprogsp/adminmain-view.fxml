@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovayaprogsp.AdminMainController">
+    <!-- Верхняя панель -->
+    <top>
+        <Label text="Административный интерфейс" textFill="black" alignment="CENTER" style="-fx-font-size: 18px;" />
+    </top>
+
+    <!-- Центральная панель -->
+    <center>
+        <TabPane>
+            <!-- Вкладка: Студенты -->
+            <Tab text="Студенты">
+                <AnchorPane>
+                    <children>
+                        <!-- Фильтр -->
+                        <VBox layoutX="20.0" layoutY="20.0" spacing="10">
+                            <children>
+                                <HBox spacing="10">
+                                    <Label text="Факультет:" />
+                                    <ComboBox fx:id="facultyComboBox" prefWidth="150.0" />
+                                </HBox>
+                                <HBox spacing="10">
+                                    <Label text="Группа:" />
+                                    <ComboBox fx:id="groupComboBox" prefWidth="150.0" />
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Таблица студентов -->
+                        <TableView fx:id="studentsTable" layoutX="20.0" layoutY="80.0" prefWidth="760.0" prefHeight="400.0">
+                            <columns>
+                                <TableColumn fx:id="fioColumn" text="ФИО" prefWidth="200.0" />
+                                <TableColumn fx:id="emailColumn" text="Почта" prefWidth="150.0" />
+                                <TableColumn fx:id="performanceColumn" text="Успеваемость" prefWidth="100.0" />
+                                <TableColumn fx:id="scholarshipColumn" text="Стипендия (руб.)" prefWidth="150.0" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Вкладка: Льготы и активности -->
+            <Tab text="Льготы и активности">
+                <AnchorPane>
+                    <children>
+                        <VBox layoutX="20.0" layoutY="20.0" spacing="10">
+                            <children>
+                                <HBox spacing="10">
+                                    <Label text="Описание активности/льготы:" />
+                                    <TextField fx:id="benefitDescriptionField" prefWidth="400.0" />
+                                </HBox>
+                                <HBox spacing="10">
+                                    <Label text="Влияние на стипендию (руб.):" />
+                                    <TextField fx:id="benefitAmountField" prefWidth="100.0" />
+                                </HBox>
+                                <Button text="Добавить" fx:id="addBenefitButton" />
+                            </children>
+                        </VBox>
+
+                        <TableView fx:id="benefitsTable" layoutX="20.0" layoutY="100.0" prefWidth="760.0" prefHeight="400.0">
+                            <columns>
+                                <TableColumn fx:id="benefitDescriptionColumn" text="Описание" prefWidth="500.0" />
+                                <TableColumn fx:id="benefitAmountColumn" text="Влияние (руб.)" prefWidth="150.0" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </Tab>
+
+            <!-- Вкладка: Управление учетными записями -->
+            <Tab text="Учетные записи">
+                <AnchorPane>
+                    <children>
+                        <VBox layoutX="20.0" layoutY="20.0" spacing="10">
+                            <children>
+                                <HBox spacing="10">
+                                    <Label text="ФИО студента:" />
+                                    <TextField fx:id="studentFioField" prefWidth="300.0" />
+                                </HBox>
+                                <HBox spacing="10">
+                                    <Label text="Факультет:" />
+                                    <TextField fx:id="studentFacultyField" prefWidth="200.0" />
+                                    <Label text="Группа:" />
+                                    <TextField fx:id="studentGroupField" prefWidth="100.0" />
+                                </HBox>
+                                <Button text="Сохранить изменения" fx:id="saveStudentButton" />
+                                <Button text="Удалить студента" fx:id="deleteStudentButton" />
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>
